@@ -33,7 +33,7 @@ export function Header() {
   );
 
   const PartnerButton = ({ isMobile = false, onClick }: { isMobile?: boolean, onClick?: () => void }) => (
-    <Button asChild size={isMobile ? "lg" : "default"} className="bg-gradient-to-r from-red-500 to-yellow-500 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 rounded-full">
+    <Button asChild size={isMobile ? "lg" : "default"} className="bg-gradient-to-r from-red-500 to-yellow-500 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 rounded-full text-base h-12 px-6">
       <a href="#partner-registration" onClick={onClick}>
         التسجيل كشريك
         <UserPlus className="mr-2 h-5 w-5" />
@@ -65,7 +65,7 @@ export function Header() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background p-0">
                 <div className="flex justify-between items-center p-4 border-b">
                     <Link href="/" className="flex items-center gap-2" onClick={() => setIsSheetOpen(false)}>
                         <Sparkles className="h-8 w-8 text-primary" />
@@ -78,7 +78,7 @@ export function Header() {
                          </Button>
                      </SheetClose>
                 </div>
-              <div className="flex flex-col items-center justify-center h-full gap-8">
+              <div className="flex flex-col items-center justify-center h-full gap-8 p-4">
                 <nav className="flex flex-col items-center gap-8">
                   {navLinks.map(link => (
                     <NavLink key={link.href} {...link} onClick={() => setIsSheetOpen(false)} />
