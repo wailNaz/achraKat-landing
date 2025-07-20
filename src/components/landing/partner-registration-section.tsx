@@ -10,14 +10,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { handlePartnerRegistration } from '@/lib/actions';
-import { Upload } from 'lucide-react';
+import { Upload, CheckCircle } from 'lucide-react';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'يجب أن يتكون الاسم من حرفين على الأقل.' }),
   phone: z.string().regex(/^([+]?[s0-9]+)?[0-9]{10,}$/, { message: 'الرجاء إدخال رقم هاتف صالح.' }),
   email: z.string().email({ message: 'الرجاء إدخال بريد إلكتروني صالح.' }),
   category: z.string({ required_error: 'الرجاء اختيار فئة العمل.' }),
-  tradeRegister: z.any().refine((file) => file?.length == 1, 'الرجاء تحميل ملف السجل التجاري.'),
+  tradeRegister: z.any().refine((files) => files?.length == 1, 'الرجاء تحميل ملف السجل التجاري.'),
 });
 
 export function PartnerRegistrationSection() {
@@ -58,7 +58,7 @@ export function PartnerRegistrationSection() {
   }
 
   return (
-    <section id="partner-registration" className="w-full py-20 md:py-32 bg-gray-50/50 dark:bg-gray-900/50">
+    <section id="partner-registration" className="w-full py-20 md:py-32 bg-transparent">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
@@ -68,23 +68,23 @@ export function PartnerRegistrationSection() {
             <p className="text-lg text-muted-foreground">
               وسّع نطاق عملك وانضم إلى شبكة شركاء أشرقت. قدم منتجاتك لملايين المستخدمين واستفد من حلول الدفع المبتكرة التي نقدمها.
             </p>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-4">
-                <div className="w-4 h-4 rounded-full bg-primary" />
+            <ul className="space-y-4 text-lg">
+              <li className="flex items-center gap-3">
+                <CheckCircle className="w-6 h-6 text-primary" />
                 <span>وصول لقاعدة عملاء واسعة</span>
               </li>
-              <li className="flex items-center gap-4">
-                <div className="w-4 h-4 rounded-full bg-primary" />
+              <li className="flex items-center gap-3">
+                <CheckCircle className="w-6 h-6 text-primary" />
                 <span>زيادة مبيعاتك وأرباحك</span>
               </li>
-              <li className="flex items-center gap-4">
-                <div className="w-4 h-4 rounded-full bg-primary" />
+              <li className="flex items-center gap-3">
+                <CheckCircle className="w-6 h-6 text-primary" />
                 <span>تسويق ودعم مستمر</span>
               </li>
             </ul>
           </div>
 
-          <Card className="shadow-2xl bg-card/80 backdrop-blur-sm">
+          <Card className="shadow-2xl bg-card/60 backdrop-blur-sm border-border/60">
             <CardHeader>
               <CardTitle>نموذج تسجيل الشركاء</CardTitle>
               <CardDescription>املأ النموذج أدناه لبدء عملية الشراكة معنا.</CardDescription>
@@ -123,7 +123,7 @@ export function PartnerRegistrationSection() {
                       <FormLabel>السجل التجاري (PDF/Image)</FormLabel>
                       <FormControl>
                         <div className="relative">
-                          <Input type="file" className="pl-12" accept=".pdf,.png,.jpg,.jpeg" onChange={(e) => onChange(e.target.files)} {...rest} />
+                          <Input type="file" className="pl-12 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20" accept=".pdf,.png,.jpg,.jpeg" onChange={(e) => onChange(e.target.files)} {...rest} />
                           <Upload className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                         </div>
                       </FormControl>

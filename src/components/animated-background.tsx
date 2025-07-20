@@ -1,9 +1,11 @@
 export function AnimatedBackground() {
   return (
     <div className="fixed inset-0 -z-10 h-full w-full bg-background">
-      <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
-      <div className="absolute left-0 top-0 h-1/2 w-1/2 rounded-full bg-primary/10 blur-[100px] animate-[gradient-flow_15s_ease_infinite]"></div>
-      <div className="absolute right-0 bottom-0 h-1/2 w-1/2 rounded-full bg-accent/10 blur-[100px] animate-[gradient-flow_20s_ease_infinite_reverse]"></div>
+      <div 
+        className="absolute inset-0 -z-20 h-full w-full bg-gradient-to-br from-background via-blue-100/30 to-background bg-[length:200%_200%] animate-[subtle-gradient-bg_25s_ease_infinite]"
+      ></div>
+      <div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,255,255,0.05),rgba(255,255,255,0))]"></div>
+      <div className="absolute bottom-[-80%] right-[-30%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,255,255,0.05),rgba(255,255,255,0))]"></div>
     </div>
   );
 }

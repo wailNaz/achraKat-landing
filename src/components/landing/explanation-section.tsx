@@ -26,19 +26,19 @@ const features = [
 
 export function ExplanationSection() {
   return (
-    <section id="features" className="w-full py-20 md:py-32 bg-background/80 backdrop-blur-sm">
+    <section id="features" className="w-full py-20 md:py-32 bg-transparent">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold font-headline bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
             كيف يعمل التطبيق؟
           </h2>
           <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl">
-            ثلاث خطوات بسيطة لتجربة تسوق لم يسبق لها مثيل.
+            أربع خطوات بسيطة لتجربة تسوق لم يسبق لها مثيل.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="text-center p-6 bg-card/50 border-border/50 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:-translate-y-2">
+            <Card key={index} className="text-center p-6 bg-card/50 backdrop-blur-sm border-border/50 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-primary/20 hover:-translate-y-2">
               <CardHeader className="items-center">
                 <div className="p-4 bg-primary/10 rounded-full mb-4">
                   {feature.icon}
