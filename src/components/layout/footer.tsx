@@ -20,7 +20,7 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">روابط سريعة</h3>
             <ul className="space-y-2">
               <li><a href="#home" className="hover:text-primary transition-colors">الرئيسية</a></li>
-              <li><a href="#features" className="hover:text-primary transition-colors">المميزات</a></li>
+              <li><a href="#features" className="hover:text-primary transition-colors">كيف نعمل</a></li>
               <li><a href="#testimonials" className="hover:text-primary transition-colors">آراء العملاء</a></li>
               <li><a href="#faq" className="hover:text-primary transition-colors">الأسئلة الشائعة</a></li>
               <li><a href="#partner-registration" className="hover:text-primary transition-colors">تسجيل الشركاء</a></li>

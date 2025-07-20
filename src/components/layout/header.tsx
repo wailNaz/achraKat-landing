@@ -4,14 +4,13 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import { Menu, Sparkles, X } from 'lucide-react';
+import { Menu, Sparkles, X, UserPlus } from 'lucide-react';
 
 const navLinks = [
   { href: '#home', label: 'الرئيسية' },
-  { href: '#features', label: 'المميزات' },
+  { href: '#features', label: 'كيف نعمل' },
   { href: '#testimonials', label: 'الآراء' },
   { href: '#faq', label: 'الأسئلة' },
-  { href: '#partner-registration', label: 'الشركاء' },
   { href: '#contact', label: 'تواصل معنا' },
 ];
 
@@ -33,6 +32,15 @@ export function Header() {
     </a>
   );
 
+  const PartnerButton = ({ isMobile = false, onClick }: { isMobile?: boolean, onClick?: () => void }) => (
+    <Button asChild size={isMobile ? "lg" : "default"} className="bg-gradient-to-r from-red-500 to-yellow-500 text-white font-bold shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-full">
+      <a href="#partner-registration" onClick={onClick}>
+        التسجيل كشريك
+        <UserPlus className="mr-2 h-5 w-5" />
+      </a>
+    </Button>
+  );
+
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-background/80 backdrop-blur-lg shadow-sm' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
@@ -40,11 +48,15 @@ export function Header() {
           <Sparkles className="h-8 w-8 text-primary" />
           <span className="text-2xl font-bold text-foreground">أشرقت</span>
         </Link>
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-6">
           {navLinks.map(link => (
             <NavLink key={link.href} {...link} />
           ))}
         </nav>
+        <div className="hidden lg:flex items-center gap-4">
+            <PartnerButton />
+        </div>
+
         <div className="lg:hidden">
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
@@ -66,12 +78,13 @@ export function Header() {
                          </Button>
                      </SheetClose>
                 </div>
-              <div className="flex flex-col items-center justify-center h-full">
+              <div className="flex flex-col items-center justify-center h-full gap-8">
                 <nav className="flex flex-col items-center gap-8">
                   {navLinks.map(link => (
                     <NavLink key={link.href} {...link} onClick={() => setIsSheetOpen(false)} />
                   ))}
                 </nav>
+                <PartnerButton isMobile={true} onClick={() => setIsSheetOpen(false)} />
               </div>
             </SheetContent>
           </Sheet>

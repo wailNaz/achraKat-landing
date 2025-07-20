@@ -10,7 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { handlePartnerRegistration } from '@/lib/actions';
-import { Upload, CheckCircle } from 'lucide-react';
+import { Upload, CheckCircle, Send } from 'lucide-react';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'يجب أن يتكون الاسم من حرفين على الأقل.' }),
@@ -130,8 +130,13 @@ export function PartnerRegistrationSection() {
                       <FormMessage />
                     </FormItem>
                   )} />
-                  <Button type="submit" className="w-full text-lg h-12" disabled={form.formState.isSubmitting}>
-                    {form.formState.isSubmitting ? 'جاري الإرسال...' : 'إرسال الطلب'}
+                  <Button type="submit" className="w-full text-lg h-12 bg-gradient-to-r from-red-500 to-yellow-500 text-white font-bold shadow-lg hover:shadow-xl transition-shadow" disabled={form.formState.isSubmitting}>
+                    {form.formState.isSubmitting ? 'جاري الإرسال...' : (
+                      <>
+                        <Send className="ml-2 h-5 w-5" />
+                        إرسال الطلب
+                      </>
+                    )}
                   </Button>
                 </form>
               </Form>
