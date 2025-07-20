@@ -31,8 +31,6 @@
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 217 91% 60%;
-
-    --radius: 0.75rem;
   }
 
   .dark {
@@ -93,18 +91,6 @@
   80% { background-position: 50% 66%; }
   90% { background-position: 50% 100%; }
   100% { background-position: 50% 100%; }
-}
-
-@keyframes gradient-flow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 @keyframes subtle-gradient-bg {

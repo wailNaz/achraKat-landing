@@ -4,7 +4,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { Sparkles } from "lucide-react";
 
 const faqItems = [
   {
