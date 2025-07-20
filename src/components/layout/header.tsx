@@ -33,7 +33,7 @@ export function Header() {
   );
 
   const PartnerButton = ({ isMobile = false, onClick }: { isMobile?: boolean, onClick?: () => void }) => (
-    <Button asChild size={isMobile ? "lg" : "default"} className="bg-gradient-to-r from-red-500 to-yellow-500 text-white font-bold shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-full">
+    <Button asChild size={isMobile ? "lg" : "default"} className="bg-gradient-to-r from-red-500 to-yellow-500 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 rounded-full">
       <a href="#partner-registration" onClick={onClick}>
         التسجيل كشريك
         <UserPlus className="mr-2 h-5 w-5" />

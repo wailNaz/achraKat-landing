@@ -22,11 +22,11 @@ export function HeroSection() {
               تجربة تسوق فريدة بالتقسيط السهل والمريح. كل ما تحتاجه في متناول يدك مع خطط دفع مرنة تناسب ميزانيتك.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="h-14 text-lg rounded-full shadow-lg hover:shadow-primary/50 transition-shadow duration-300">
+              <Button size="lg" className="h-14 text-lg rounded-full shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:-translate-y-1">
                 <Apple className="ml-2 h-6 w-6" />
                 App Store
               </Button>
-              <Button size="lg" variant="outline" className="h-14 text-lg rounded-full bg-background/70 backdrop-blur-sm shadow-lg hover:shadow-accent/50 transition-shadow duration-300">
+              <Button size="lg" variant="outline" className="h-14 text-lg rounded-full bg-background/70 backdrop-blur-sm shadow-lg hover:shadow-accent/50 transition-all duration-300 transform hover:-translate-y-1">
                 <GooglePlayIcon className="ml-2 h-6 w-6 text-[#4285F4]" />
                 Google Play
               </Button>

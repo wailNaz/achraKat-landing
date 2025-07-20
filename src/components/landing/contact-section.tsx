@@ -54,14 +54,14 @@ export function ContactSection() {
         <div className="mt-16">
           <h3 className="text-2xl font-bold mb-4">تابعنا على</h3>
           <div className="flex justify-center gap-4">
-            <Button variant="outline" size="icon" className="rounded-full w-12 h-12 hover:bg-primary hover:text-primary-foreground transition-colors duration-300" asChild>
-              <a href="#" aria-label="Facebook"><Facebook className="h-6 w-6" /></a>
+            <Button variant="outline" size="icon" className="group rounded-full w-12 h-12 border-2 border-border/50 bg-background/50 backdrop-blur-sm hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 transform hover:scale-110">
+              <a href="#" aria-label="Facebook"><Facebook className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-colors" /></a>
             </Button>
-            <Button variant="outline" size="icon" className="rounded-full w-12 h-12 hover:bg-primary hover:text-primary-foreground transition-colors duration-300" asChild>
-              <a href="#" aria-label="Twitter"><Twitter className="h-6 w-6" /></a>
+            <Button variant="outline" size="icon" className="group rounded-full w-12 h-12 border-2 border-border/50 bg-background/50 backdrop-blur-sm hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 transform hover:scale-110">
+              <a href="#" aria-label="Twitter"><Twitter className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-colors" /></a>
             </Button>
-            <Button variant="outline" size="icon" className="rounded-full w-12 h-12 hover:bg-primary hover:text-primary-foreground transition-colors duration-300" asChild>
-              <a href="#" aria-label="Instagram"><Instagram className="h-6 w-6" /></a>
+            <Button variant="outline" size="icon" className="group rounded-full w-12 h-12 border-2 border-border/50 bg-background/50 backdrop-blur-sm hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 transform hover:scale-110">
+              <a href="#" aria-label="Instagram"><Instagram className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-colors" /></a>
             </Button>
           </div>
         </div>

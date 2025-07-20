@@ -130,7 +130,7 @@ export function PartnerRegistrationSection() {
                       <FormMessage />
                     </FormItem>
                   )} />
-                  <Button type="submit" className="w-full text-lg h-12 bg-gradient-to-r from-red-500 to-yellow-500 text-white font-bold shadow-lg hover:shadow-xl transition-shadow" disabled={form.formState.isSubmitting}>
+                  <Button type="submit" className="w-full text-lg h-12 bg-gradient-to-r from-red-500 to-yellow-500 text-white font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" disabled={form.formState.isSubmitting}>
                     {form.formState.isSubmitting ? 'جاري الإرسال...' : (
                       <>
                         <Send className="ml-2 h-5 w-5" />
