@@ -131,7 +131,7 @@ export function PartnerRegistrationSection() {
                       <FormMessage />
                     </FormItem>
                   )} />
-                  <Button type="submit" className="w-full text-lg h-14 bg-gradient-to-r from-accent to-yellow-400 text-accent-foreground font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" disabled={form.formState.isSubmitting}>
+                  <Button type="submit" className="w-full text-lg h-14 bg-gradient-to-r from-primary to-accent text-primary-foreground font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" disabled={form.formState.isSubmitting}>
                     {form.formState.isSubmitting ? 'جاري الإرسال...' : (
                       <>
                         <Send className="ml-2 h-5 w-5" />
