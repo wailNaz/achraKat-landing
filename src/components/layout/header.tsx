@@ -9,7 +9,9 @@ import { Menu, Sparkles, X } from 'lucide-react';
 const navLinks = [
   { href: '#home', label: 'الرئيسية' },
   { href: '#features', label: 'المميزات' },
-  { href: '#partner-registration', label: 'تسجيل الشركاء' },
+  { href: '#testimonials', label: 'الآراء' },
+  { href: '#faq', label: 'الأسئلة' },
+  { href: '#partner-registration', label: 'الشركاء' },
   { href: '#contact', label: 'تواصل معنا' },
 ];
 
@@ -38,12 +40,12 @@ export function Header() {
           <Sparkles className="h-8 w-8 text-primary" />
           <span className="text-2xl font-bold text-foreground">أشرقت</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map(link => (
             <NavLink key={link.href} {...link} />
           ))}
         </nav>
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
