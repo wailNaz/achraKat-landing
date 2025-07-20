@@ -1,6 +1,10 @@
+"use client";
+
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Apple } from 'lucide-react';
 import { HeroVisual } from './hero-visual';
+import { useLanguage } from '@/context/language-context';
+import { content } from '@/lib/content';
 
 const GooglePlayIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -10,30 +14,32 @@ const GooglePlayIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 
 export function HeroSection() {
+  const { language } = useLanguage();
+  const t = content[language].hero;
   return (
     <section id="home" className="w-full pt-32 md:pt-48 pb-20 md:pb-32 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="text-center lg:text-right">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold font-headline tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-br from-primary via-blue-400 to-accent">
-              أشرقت: تسوّق اليوم، وادفع غداً
+          <div className="text-center lg:text-start">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold font-headline tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-br from-primary via-blue-400 to-yellow-400">
+              {t.title}
             </h1>
             <p className="max-w-2xl mx-auto lg:mx-0 text-lg md:text-xl text-muted-foreground mb-8">
-              تجربة تسوق فريدة بالتقسيط السهل والمريح. كل ما تحتاجه في متناول يدك مع خطط دفع مرنة تناسب ميزانيتك.
+              {t.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button size="lg" className="h-14 text-lg rounded-full shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:-translate-y-1">
-                <Apple className="ml-2 h-6 w-6" />
-                App Store
+                <Apple className="ml-2 rtl:ml-0 rtl:mr-2 h-6 w-6" />
+                {t.appStoreButton}
               </Button>
-              <Button size="lg" variant="outline" className="h-14 text-lg rounded-full bg-background/70 backdrop-blur-sm shadow-lg hover:shadow-accent/50 transition-all duration-300 transform hover:-translate-y-1">
-                <GooglePlayIcon className="ml-2 h-6 w-6 text-[#4285F4]" />
-                Google Play
+              <Button size="lg" variant="outline" className="h-14 text-lg rounded-full bg-background/70 backdrop-blur-sm shadow-lg hover:shadow-yellow-400/50 transition-all duration-300 transform hover:-translate-y-1">
+                <GooglePlayIcon className="ml-2 rtl:ml-0 rtl:mr-2 h-6 w-6 text-[#4285F4]" />
+                {t.googlePlayButton}
               </Button>
             </div>
-            <a href="#features" className="group inline-flex items-center mt-8 text-primary font-semibold hover:text-accent transition-colors">
-              اكتشف المزيد
-              <ArrowLeft className="mr-2 h-5 w-5 transform transition-transform group-hover:-translate-x-1" />
+            <a href="#features" className="group inline-flex items-center mt-8 text-primary font-semibold hover:text-yellow-400 transition-colors">
+              {t.discoverMore}
+              <ArrowLeft className="mr-2 rtl:mr-0 rtl:ml-2 h-5 w-5 transform transition-transform group-hover:-translate-x-1 rtl:group-hover:translate-x-1" />
             </a>
           </div>
           <div className="relative flex items-center justify-center min-h-[400px] lg:min-h-[500px]">

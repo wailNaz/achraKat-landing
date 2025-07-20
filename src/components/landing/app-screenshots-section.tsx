@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -9,6 +11,8 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from 'next/image';
 import { BrowserMockup } from "./browser-mockup";
+import { useLanguage } from "@/context/language-context";
+import { content } from "@/lib/content";
 
 const userAppScreenshots = [
   {
@@ -120,22 +124,24 @@ const PartnerPanelCarousel = () => (
 
 
 export function AppScreenshotsSection() {
+  const { language } = useLanguage();
+  const t = content[language].screenshots;
   return (
     <section id="screenshots" className="w-full py-20 md:py-32 bg-transparent">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold font-headline bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-            جولة في منصاتنا
+          <h2 className="text-3xl md:text-5xl font-bold font-headline bg-clip-text text-transparent bg-gradient-to-r from-primary to-yellow-400">
+            {t.title}
           </h2>
           <p className="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-xl">
-            اكتشف سهولة الاستخدام والتصميم الأنيق في كل من تطبيق المستخدمين ولوحة تحكم الشركاء.
+            {t.subtitle}
           </p>
         </div>
 
         <Tabs defaultValue="user-app" className="w-full max-w-4xl mx-auto">
             <TabsList className="grid w-full grid-cols-2 h-12 p-1.5">
-                <TabsTrigger value="user-app" className="text-lg h-full">تطبيق المستخدمين</TabsTrigger>
-                <TabsTrigger value="partner-panel" className="text-lg h-full">لوحة تحكم الشركاء</TabsTrigger>
+                <TabsTrigger value="user-app" className="text-lg h-full">{t.userAppTab}</TabsTrigger>
+                <TabsTrigger value="partner-panel" className="text-lg h-full">{t.partnerPanelTab}</TabsTrigger>
             </TabsList>
             <TabsContent value="user-app">
                 <UserAppCarousel />

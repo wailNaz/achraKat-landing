@@ -3,25 +3,27 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { AnimatedBackground } from '@/components/animated-background';
 import { Inter } from 'next/font/google';
+import { LanguageProvider, useLanguage } from '@/context/language-context';
+import { content } from '@/lib/content';
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 });
 
-export const metadata: Metadata = {
-  title: 'أشرقت | تسوق بالتقسيط',
-  description: 'أشرقت هو تطبيقك الأول للتسوق بالتقسيط في الشرق الأوسط. اكتشف آلاف المنتجات وادفع على راحتك.',
-  keywords: ['تسوق', 'تقسيط', 'أشرقت', 'e-commerce', 'installments', 'achrakat'],
-};
+// We need a client component to access the context and update the HTML tag.
+function RootLayoutContent({ children }: { children: React.ReactNode }) {
+  const { language, dir } = useLanguage();
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+  const metadataContent = content[language].metadata;
+
   return (
-    <html lang="ar" dir="rtl">
+    <html lang={language} dir={dir}>
+      <head>
+        <title>{metadataContent.title}</title>
+        <meta name="description" content={metadataContent.description} />
+        <meta name="keywords" content={metadataContent.keywords.join(', ')} />
+      </head>
       <body className={`${inter.variable} font-body antialiased`}>
         <AnimatedBackground />
         <div className="relative z-10">
@@ -30,5 +32,17 @@ export default function RootLayout({
         <Toaster />
       </body>
     </html>
+  );
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <LanguageProvider>
+      <RootLayoutContent>{children}</RootLayoutContent>
+    </LanguageProvider>
   );
 }
