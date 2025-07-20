@@ -89,28 +89,13 @@ const config: Config = {
           '50%': { transform: 'translateY(-20px)' },
           '100%': { transform: 'translateY(0px)' },
         },
-        'float-light': {
-          '0%': {
-            transform: 'translateY(0) rotate(0deg)',
-            opacity: '1',
-          },
-          '50%': {
-            transform: 'translateY(-30px) rotate(15deg)',
-            opacity: '0.8',
-          },
-          '100%': {
-            transform: 'translateY(0) rotate(0deg)',
-            opacity: '1',
-          }
-        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'subtle-gradient-bg': 'subtle-gradient-bg 20s ease infinite',
         'scroll-app-screen': 'scroll-app-screen 15s cubic-bezier(0.4, 0, 0.2, 1) infinite',
-        float: 'float 6s ease-in-out infinite',
-        'float-light': 'float-light 12s ease-in-out infinite',
+        float: 'float 8s ease-in-out infinite',
       },
     },
   },
