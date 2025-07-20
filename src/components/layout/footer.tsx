@@ -21,6 +21,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li><a href="#home" className="hover:text-primary transition-colors">الرئيسية</a></li>
               <li><a href="#features" className="hover:text-primary transition-colors">كيف نعمل</a></li>
+              <li><a href="#screenshots" className="hover:text-primary transition-colors">صور التطبيق</a></li>
               <li><a href="#testimonials" className="hover:text-primary transition-colors">آراء العملاء</a></li>
               <li><a href="#faq" className="hover:text-primary transition-colors">الأسئلة الشائعة</a></li>
               <li><a href="#partner-registration" className="hover:text-primary transition-colors">تسجيل الشركاء</a></li>

@@ -9,6 +9,7 @@ import { Menu, Sparkles, X, UserPlus } from 'lucide-react';
 const navLinks = [
   { href: '#home', label: 'الرئيسية' },
   { href: '#features', label: 'كيف نعمل' },
+  { href: '#screenshots', label: 'التطبيق' },
   { href: '#testimonials', label: 'الآراء' },
   { href: '#faq', label: 'الأسئلة' },
   { href: '#contact', label: 'تواصل معنا' },

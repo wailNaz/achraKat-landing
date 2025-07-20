@@ -1,6 +1,7 @@
 import { Header } from '@/components/layout/header';
 import { HeroSection } from '@/components/landing/hero-section';
 import { ExplanationSection } from '@/components/landing/explanation-section';
+import { AppScreenshotsSection } from '@/components/landing/app-screenshots-section';
 import { TestimonialsSection } from '@/components/landing/testimonials-section';
 import { FaqSection } from '@/components/landing/faq-section';
 import { PartnerRegistrationSection } from '@/components/landing/partner-registration-section';
@@ -14,6 +15,7 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <ExplanationSection />
+        <AppScreenshotsSection />
         <TestimonialsSection />
         <FaqSection />
         <PartnerRegistrationSection />
