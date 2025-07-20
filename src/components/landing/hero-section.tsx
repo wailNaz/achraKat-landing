@@ -37,8 +37,7 @@ export function HeroSection() {
             </a>
           </div>
           <div className="relative flex items-center justify-center min-h-[400px] lg:min-h-[500px]">
-            <div className="absolute -inset-8 md:-inset-16 bg-gradient-to-tr from-primary/20 via-yellow-400/10 to-accent/20 rounded-full blur-3xl opacity-50 animate-[spin_20s_linear_infinite]"></div>
-            <HeroVisual />
+             <HeroVisual />
           </div>
         </div>
       </div>
