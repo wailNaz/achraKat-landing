@@ -3,37 +3,18 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { AnimatedBackground } from '@/components/animated-background';
 import { Inter } from 'next/font/google';
-import { LanguageProvider, useLanguage } from '@/context/language-context';
-import { content } from '@/lib/content';
+import { LanguageProvider, LanguageUpdater } from '@/context/language-context';
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 });
 
-// We need a client component to access the context and update the HTML tag.
-function RootLayoutContent({ children }: { children: React.ReactNode }) {
-  const { language, dir } = useLanguage();
-
-  const metadataContent = content[language].metadata;
-
-  return (
-    <html lang={language} dir={dir}>
-      <head>
-        <title>{metadataContent.title}</title>
-        <meta name="description" content={metadataContent.description} />
-        <meta name="keywords" content={metadataContent.keywords.join(', ')} />
-      </head>
-      <body className={`${inter.variable} font-body antialiased`}>
-        <AnimatedBackground />
-        <div className="relative z-10">
-          {children}
-        </div>
-        <Toaster />
-      </body>
-    </html>
-  );
-}
+// Default metadata, can be overridden by LanguageUpdater
+export const metadata: Metadata = {
+  title: 'AchraKat | Achetez en plusieurs fois',
+  description: 'AchraKat est votre première application pour les achats en plusieurs fois au Moyen-Orient.',
+};
 
 export default function RootLayout({
   children,
@@ -42,7 +23,16 @@ export default function RootLayout({
 }>) {
   return (
     <LanguageProvider>
-      <RootLayoutContent>{children}</RootLayoutContent>
+      {/* LanguageUpdater is a client component that will update html/head tags */}
+      <LanguageUpdater>
+        <body className={`${inter.variable} font-body antialiased`}>
+          <AnimatedBackground />
+          <div className="relative z-10">
+            {children}
+          </div>
+          <Toaster />
+        </body>
+      </LanguageUpdater>
     </LanguageProvider>
   );
 }
