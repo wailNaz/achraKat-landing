@@ -9,7 +9,7 @@ export function PhoneMockup() {
         <div 
           className="h-full w-full bg-cover bg-center animate-[scroll-app-screen_15s_cubic-bezier(0.4,0,0.2,1)_infinite]" 
           style={{backgroundImage: "url('https://placehold.co/800x1733.png')"}}
-          data-ai-hint="app interface e-commerce"
+          data-ai-hint="futuristic app interface"
         >
         </div>
       </div>

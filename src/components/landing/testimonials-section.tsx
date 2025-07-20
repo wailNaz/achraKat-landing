@@ -8,7 +8,7 @@ const testimonials = [
     title: "عميلة راضية",
     avatar: "SA",
     image: "https://placehold.co/100x100.png",
-    dataAiHint: "woman smiling",
+    dataAiHint: "happy woman shopping",
     testimonial: "تطبيق أشرقت غير مفهومي للتسوق تمامًا. الآن أستطيع شراء كل ما أحتاجه دون القلق بشأن الدفع الفوري. الخدمة ممتازة والشفافية عالية!",
   },
   {
@@ -16,7 +16,7 @@ const testimonials = [
     title: "صاحب متجر شريك",
     avatar: "MA",
     image: "https://placehold.co/100x100.png",
-    dataAiHint: "man professional",
+    dataAiHint: "professional partner collaboration",
     testimonial: "الشراكة مع أشرقت كانت أفضل قرار اتخذته لمتجري. زادت مبيعاتي بشكل ملحوظ ووصلت لعملاء جدد لم أكن لأصل إليهم من قبل. فريق الدعم رائع.",
   },
   {
@@ -24,7 +24,7 @@ const testimonials = [
     title: "خبيرة تسوق",
     avatar: "FK",
     image: "https://placehold.co/100x100.png",
-    dataAiHint: "woman thinking",
+    dataAiHint: "woman futuristic tech",
     testimonial: "تجربة المستخدم في التطبيق سلسة وممتعة. أحببت سهولة اختيار المنتجات وخطط الدفع المرنة. أنصح به بشدة لكل من يبحث عن تجربة تسوق عصرية.",
   },
 ];
