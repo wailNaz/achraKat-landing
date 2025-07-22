@@ -1,0 +1,344 @@
+export const content = {
+  ar: {
+    language: 'ar',
+    dir: 'rtl',
+    metadata: {
+      title: 'أشرقت | تسوق بالتقسيط',
+      description: 'أشرقت هو تطبيقك الأول للتسوق بالتقسيط في الشرق الأوسط. اكتشف آلاف المنتجات وادفع على راحتك.',
+      keywords: ['تسوق', 'تقسيط', 'أشرقت', 'e-commerce', 'installments', 'achrakat'],
+    },
+    loading: {
+      text: 'جاري التحميل...',
+    },
+    header: {
+      appName: 'أشرقت',
+      navLinks: {
+        home: 'الرئيسية',
+        features: 'كيف نعمل',
+        app: 'التطبيق',
+        testimonials: 'الآراء',
+        faq: 'الأسئلة',
+        partnerRegistration: 'تسجيل الشركاء',
+        contact: 'تواصل معنا',
+      },
+      partnerButton: 'التسجيل كشريك',
+      openMenu: 'فتح القائمة',
+      closeMenu: 'إغلاق القائمة',
+    },
+    hero: {
+      title: 'أشرقت: تسوّق اليوم، وادفع غداً',
+      subtitle: 'تجربة تسوق فريدة بالتقسيط السهل والمريح. كل ما تحتاجه في متناول يدك مع خطط دفع مرنة تناسب ميزانيتك.',
+      appStoreButton: 'App Store',
+      googlePlayButton: 'Google Play',
+      discoverMore: 'اكتشف المزيد',
+    },
+    explanation: {
+      title: 'كيف يعمل التطبيق؟',
+      subtitle: 'أربع خطوات بسيطة لتجربة تسوق لم يسبق لها مثيل.',
+      steps: [
+        { title: 'حمّل التطبيق', description: 'ابدأ رحلتك بتنزيل تطبيق أشرقت من متجر التطبيقات الخاص بك مجانًا.' },
+        { title: 'اختر منتجاتك', description: 'تصفح آلاف المنتجات من شركائنا الموثوقين واختر ما يناسب احتياجاتك.' },
+        { title: 'اختر خطة التقسيط', description: 'اختر خطة الدفع الأنسب لك بكل سهولة وشفافية وبدون فوائد خفية.' },
+        { title: 'استمتع بمشترياتك', description: 'استلم منتجاتك فورًا واستمتع بتجربة تسوق عصرية ومريحة.' },
+      ],
+    },
+    screenshots: {
+      title: 'جولة في منصاتنا',
+      subtitle: 'اكتشف سهولة الاستخدام والتصميم الأنيق في كل من تطبيق المستخدمين ولوحة تحكم الشركاء.',
+      userAppTab: 'تطبيق المستخدمين',
+      partnerPanelTab: 'لوحة تحكم الشركاء',
+    },
+    testimonials: {
+      title: 'ماذا يقول عملاؤنا؟',
+      subtitle: 'آراء وشهادات نعتز بها من عملائنا وشركائنا.',
+      items: [
+        {
+          name: 'سارة عبدالله',
+          title: 'عميلة راضية',
+          avatar: 'SA',
+          image: 'https://placehold.co/100x100.png',
+          dataAiHint: 'happy woman shopping',
+          testimonial: 'تطبيق أشرقت غير مفهومي للتسوق تمامًا. الآن أستطيع شراء كل ما أحتاجه دون القلق بشأن الدفع الفوري. الخدمة ممتازة والشفافية عالية!',
+        },
+        {
+          name: 'محمد الأحمدي',
+          title: 'صاحب متجر شريك',
+          avatar: 'MA',
+          image: 'https://placehold.co/100x100.png',
+          dataAiHint: 'professional partner collaboration',
+          testimonial: 'الشراكة مع أشرقت كانت أفضل قرار اتخذته لمتجري. زادت مبيعاتي بشكل ملحوظ ووصلت لعملاء جدد لم أكن لأصل إليهم من قبل. فريق الدعم رائع.',
+        },
+        {
+          name: 'فاطمة خالد',
+          title: 'خبيرة تسوق',
+          avatar: 'FK',
+          image: 'https://placehold.co/100x100.png',
+          dataAiHint: 'woman futuristic tech',
+          testimonial: 'تجربة المستخدم في التطبيق سلسة وممتعة. أحببت سهولة اختيار المنتجات وخطط الدفع المرنة. أنصح به بشدة لكل من يبحث عن تجربة تسوق عصرية.',
+        },
+      ],
+    },
+    faq: {
+      title: 'الأسئلة الشائعة',
+      subtitle: 'لديك أسئلة؟ لدينا إجابات. كل ما تحتاج لمعرفته حول أشرقت.',
+      items: [
+        { question: 'كيف يعمل تطبيق أشرقت؟', answer: 'ببساطة، حمّل التطبيق، اختر منتجاتك من شركائنا، ثم اختر خطة التقسيط التي تناسبك. يمكنك استلام مشترياتك فورًا والدفع على دفعات شهرية مريحة.' },
+        { question: 'هل هناك أي فوائد أو رسوم خفية؟', answer: 'نحن نؤمن بالشفافية الكاملة. جميع خطط التقسيط لدينا بدون فوائد أو رسوم خفية. المبلغ الذي تراه هو المبلغ الذي تدفعه، مقسم على دفعات.' },
+        { question: 'كيف يمكنني أن أصبح شريكًا في أشرقت؟', answer: 'نرحب دائمًا بالشركاء الجدد! يمكنك ملء نموذج تسجيل الشركاء على موقعنا، وسيقوم فريقنا بمراجعة طلبك والتواصل معك في أقرب وقت ممكن لبدء الشراكة.' },
+        { question: 'ما هي المتاجر التي يمكنني التسوق منها؟', answer: 'لدينا شبكة واسعة من الشركاء الموثوقين في مختلف الفئات مثل الإلكترونيات، الأزياء، الأثاث، وغيرها. يمكنك تصفح قائمة الشركاء كاملة داخل التطبيق.' },
+        { question: 'هل أحتاج إلى بطاقة ائتمان للاستفادة من الخدمة؟', answer: 'لا تحتاج بالضرورة إلى بطاقة ائتمان. نحن نقدم خيارات دفع متنوعة لتناسب الجميع، بما في ذلك طرق الدفع الرقمية الأخرى. التفاصيل متوفرة في التطبيق.' },
+      ],
+    },
+    partnerRegistration: {
+      title: 'انضم إلينا كشريك',
+      subtitle: 'وسّع نطاق عملك وانضم إلى شبكة شركاء أشرقت. قدم منتجاتك لملايين المستخدمين واستفد من حلول الدفع المبتكرة التي نقدمها.',
+      benefits: ['وصول لقاعدة عملاء واسعة', 'زيادة مبيعاتك وأرباحك', 'تسويق ودعم مستمر'],
+      form: {
+        title: 'نموذج تسجيل الشركاء',
+        description: 'املأ النموذج أدناه لبدء عملية الشراكة معنا.',
+        fields: {
+          name: { label: 'اسم العمل', placeholder: 'اسم شركتك' },
+          phone: { label: 'رقم الهاتف', placeholder: '05xxxxxxxx' },
+          email: { label: 'البريد الإلكتروني', placeholder: 'partner@example.com' },
+          category: { 
+            label: 'فئة العمل', 
+            placeholder: 'اختر فئة',
+            options: [
+              { value: 'electronics', label: 'إلكترونيات' },
+              { value: 'fashion', label: 'أزياء' },
+              { value: 'furniture', label: 'أثاث' },
+              { value: 'other', label: 'أخرى' },
+            ],
+          },
+          tradeRegister: { label: 'السجل التجاري (PDF/Image)' },
+        },
+        submitButton: {
+          default: 'إرسال الطلب',
+          submitting: 'جاري الإرسال...',
+        },
+        note: 'سيتم مراجعة طلبك من قبل الإدارة وسيتم إرسال بريد إلكتروني عند الموافقة.',
+        validation: {
+          name_min: 'يجب أن يتكون الاسم من حرفين على الأقل.',
+          phone_invalid: 'الرجاء إدخال رقم هاتف صالح.',
+          email_invalid: 'الرجاء إدخال بريد إلكتروني صالح.',
+          category_required: 'الرجاء اختيار فئة العمل.',
+          tradeRegister_required: 'الرجاء تحميل ملف السجل التجاري.',
+        },
+        toast: {
+          success: { title: 'تم إرسال طلبك بنجاح!', description: 'سيتم مراجعة طلبك وسيتم التواصل معك قريبًا.' },
+          error: { title: 'حدث خطأ', description: 'لم نتمكن من إرسال طلبك. الرجاء المحاولة مرة أخرى.' },
+        }
+      }
+    },
+    contact: {
+      title: 'تواصل معنا',
+      subtitle: 'نحن هنا لمساعدتك. تواصل معنا عبر القنوات التالية.',
+      email: { title: 'البريد الإلكتروني', address: 'support@achrakat.com' },
+      phone: { title: 'الهاتف', number: '+966 123 456 789' },
+      office: { title: 'المكتب', address: 'الرياض، المملكة العربية السعودية' },
+      social: { title: 'تابعنا على' },
+      contactForm: {
+        title: 'أرسل لنا رسالة',
+        description: 'لديك سؤال أو استفسار؟ املأ النموذج وسنرد عليك في أقرب وقت.',
+        fields: {
+          name: { label: 'الاسم الكامل', placeholder: 'اسمك الكامل' },
+          email: { label: 'البريد الإلكتروني', placeholder: 'you@example.com' },
+          subject: { label: 'الموضوع', placeholder: 'بخصوص...' },
+          message: { label: 'رسالتك', placeholder: 'اكتب رسالتك هنا...' },
+        },
+        submitButton: {
+          default: 'إرسال الرسالة',
+          submitting: 'جاري الإرسال...',
+        },
+        validation: {
+            name_min: 'يجب أن يتكون الاسم من حرفين على الأقل.',
+            email_invalid: 'الرجاء إدخال بريد إلكتروني صالح.',
+            subject_min: 'يجب أن يتكون الموضوع من 5 أحرف على الأقل.',
+            message_min: 'يجب أن تتكون الرسالة من 10 أحرف على الأقل.',
+        },
+        toast: {
+          success: { title: 'تم إرسال رسالتك بنجاح!', description: 'شكرًا لتواصلك معنا. سنرد عليك في أقرب وقت ممكن.' },
+          error: { title: 'حدث خطأ', description: 'لم نتمكن من إرسال رسالتك. الرجاء المحاولة مرة أخرى.' },
+        }
+      }
+    },
+    footer: {
+      appName: 'أشرقت',
+      description: 'تجربة تسوق فريدة بالتقسيط السهل والمريح.',
+      quickLinks: { title: 'روابط سريعة' },
+      social: { title: 'تابعنا' },
+      copyright: 'أشرقت. جميع الحقوق محفوظة.',
+    },
+  },
+  fr: {
+    language: 'fr',
+    dir: 'ltr',
+    metadata: {
+      title: 'AchraKat | Achetez en plusieurs fois',
+      description: 'AchraKat est votre première application pour les achats en plusieurs fois au Moyen-Orient. Découvrez des milliers de produits et payez à votre rythme.',
+      keywords: ['shopping', 'paiement échelonné', 'achrakat', 'e-commerce', 'installments'],
+    },
+    loading: {
+      text: 'Chargement...',
+    },
+    header: {
+      appName: 'AchraKat',
+      navLinks: {
+        home: 'Accueil',
+        features: 'Comment ça marche',
+        app: 'Application',
+        testimonials: 'Avis',
+        faq: 'FAQ',
+        partnerRegistration: 'Devenir Partenaire',
+        contact: 'Contact',
+      },
+      partnerButton: 'Devenir Partenaire',
+      openMenu: 'Ouvrir le menu',
+      closeMenu: 'Fermer le menu',
+    },
+    hero: {
+      title: 'AchraKat: Achetez aujourd\'hui, payez demain',
+      subtitle: 'Une expérience d\'achat unique avec des paiements échelonnés faciles et pratiques. Tout ce dont vous avez besoin à portée de main avec des plans de paiement flexibles adaptés à votre budget.',
+      appStoreButton: 'App Store',
+      googlePlayButton: 'Google Play',
+      discoverMore: 'Découvrir plus',
+    },
+    explanation: {
+      title: 'Comment ça marche ?',
+      subtitle: 'Quatre étapes simples pour une expérience de shopping inégalée.',
+      steps: [
+        { title: 'Téléchargez l\'app', description: 'Commencez votre voyage en téléchargeant gratuitement l\'application AchraKat depuis votre app store.' },
+        { title: 'Choisissez vos produits', description: 'Parcourez des milliers de produits de nos partenaires de confiance et choisissez ce dont vous avez besoin.' },
+        { title: 'Choisissez un plan', description: 'Sélectionnez le plan de paiement qui vous convient le mieux, en toute simplicité et transparence, sans frais cachés.' },
+        { title: 'Profitez de vos achats', description: 'Recevez vos produits immédiatement et profitez d\'une expérience d\'achat moderne et pratique.' },
+      ],
+    },
+    screenshots: {
+      title: 'Un aperçu de nos plateformes',
+      subtitle: 'Découvrez la facilité d\'utilisation et le design élégant de l\'application utilisateur et du tableau de bord partenaire.',
+      userAppTab: 'Application Utilisateur',
+      partnerPanelTab: 'Panel Partenaire',
+    },
+    testimonials: {
+      title: 'Que disent nos clients ?',
+      subtitle: 'Des avis et des témoignages que nous chérissons de nos clients et partenaires.',
+      items: [
+        {
+          name: 'Sarah Abdullah',
+          title: 'Cliente satisfaite',
+          avatar: 'SA',
+          image: 'https://placehold.co/100x100.png',
+          dataAiHint: 'happy woman shopping',
+          testimonial: 'AchraKat a complètement changé ma façon de faire du shopping. Maintenant, je peux acheter tout ce dont j\'ai besoin sans me soucier du paiement immédiat. Le service est excellent et la transparence est au rendez-vous !',
+        },
+        {
+          name: 'Mohammed Al-Ahmadi',
+          title: 'Propriétaire de magasin partenaire',
+          avatar: 'MA',
+          image: 'https://placehold.co/100x100.png',
+          dataAiHint: 'professional partner collaboration',
+          testimonial: 'Le partenariat avec AchraKat a été la meilleure décision pour ma boutique. Mes ventes ont considérablement augmenté et j\'ai atteint de nouveaux clients. L\'équipe de support est fantastique.',
+        },
+        {
+          name: 'Fatima Khaled',
+          title: 'Experte en shopping',
+          avatar: 'FK',
+          image: 'https://placehold.co/100x100.png',
+          dataAiHint: 'woman futuristic tech',
+          testimonial: 'L\'expérience utilisateur dans l\'application est fluide et agréable. J\'ai adoré la facilité de sélection des produits et les plans de paiement flexibles. Je le recommande vivement.',
+        },
+      ],
+    },
+    faq: {
+      title: 'Questions fréquentes',
+      subtitle: 'Vous avez des questions ? Nous avons des réponses. Tout ce que vous devez savoir sur AchraKat.',
+      items: [
+        { question: 'Comment fonctionne l\'application AchraKat ?', answer: 'C\'est simple. Téléchargez l\'application, choisissez vos produits, puis sélectionnez le plan de paiement qui vous convient. Vous pouvez recevoir vos achats immédiatement et payer en plusieurs versements mensuels pratiques.' },
+        { question: 'Y a-t-il des intérêts ou des frais cachés ?', answer: 'Nous croyons en une transparence totale. Tous nos plans de paiement sont sans intérêts ni frais cachés. Le montant que vous voyez est le montant que vous payez, réparti en plusieurs versements.' },
+        { question: 'Comment puis-je devenir partenaire d\'AchraKat ?', answer: 'Vous pouvez remplir le formulaire d\'inscription des partenaires sur notre site web. Notre équipe examinera votre demande et vous contactera dans les plus brefs délais.' },
+        { question: 'Dans quels magasins puis-je faire mes achats ?', answer: 'Nous avons un large réseau de partenaires de confiance dans diverses catégories. Vous pouvez parcourir la liste complète des partenaires dans l\'application.' },
+        { question: 'Ai-je besoin d\'une carte de crédit pour utiliser le service ?', answer: 'Pas nécessairement. Nous proposons diverses options de paiement pour convenir à tout le monde. Les détails sont disponibles dans l\'application.' },
+      ],
+    },
+    partnerRegistration: {
+      title: 'Rejoignez-nous en tant que partenaire',
+      subtitle: 'Développez votre activité et rejoignez le réseau de partenaires AchraKat. Proposez vos produits à des millions d\'utilisateurs et profitez de nos solutions de paiement innovantes.',
+      benefits: ['Accès à une large base de clients', 'Augmentez vos ventes et vos bénéfices', 'Marketing et support continus'],
+      form: {
+        title: 'Formulaire d\'inscription partenaire',
+        description: 'Remplissez le formulaire ci-dessous pour commencer le processus de partenariat avec nous.',
+        fields: {
+          name: { label: 'Nom de l\'entreprise', placeholder: 'Le nom de votre entreprise' },
+          phone: { label: 'Numéro de téléphone', placeholder: '06xxxxxxxx' },
+          email: { label: 'Email', placeholder: 'partenaire@example.com' },
+          category: {
+            label: 'Catégorie d\'entreprise',
+            placeholder: 'Choisissez une catégorie',
+            options: [
+              { value: 'electronics', label: 'Électronique' },
+              { value: 'fashion', label: 'Mode' },
+              { value: 'furniture', label: 'Meubles' },
+              { value: 'other', label: 'Autre' },
+            ],
+          },
+          tradeRegister: { label: 'Registre de commerce (PDF/Image)' },
+        },
+        submitButton: {
+          default: 'Envoyer la demande',
+          submitting: 'Envoi en cours...',
+        },
+        note: 'Votre demande sera examinée par l\'administration et un e-mail sera envoyé lors de l\'approbation.',
+        validation: {
+          name_min: 'Le nom doit comporter au moins 2 caractères.',
+          phone_invalid: 'Veuillez entrer un numéro de téléphone valide.',
+          email_invalid: 'Veuillez entrer une adresse e-mail valide.',
+          category_required: 'Veuillez sélectionner une catégorie d\'entreprise.',
+          tradeRegister_required: 'Veuillez télécharger le fichier du registre de commerce.',
+        },
+        toast: {
+          success: { title: 'Votre demande a été envoyée avec succès !', description: 'Votre demande sera examinée et nous vous contacterons bientôt.' },
+          error: { title: 'Une erreur est survenue', description: 'Nous n\'avons pas pu envoyer votre demande. Veuillez réessayer.' },
+        }
+      }
+    },
+    contact: {
+      title: 'Contactez-nous',
+      subtitle: 'Nous sommes là pour vous aider. Contactez-nous via les canaux suivants.',
+      email: { title: 'Email', address: 'support@achrakat.com' },
+      phone: { title: 'Téléphone', number: '+966 123 456 789' },
+      office: { title: 'Bureau', address: 'Riyad, Arabie Saoudite' },
+      social: { title: 'Suivez-nous sur' },
+      contactForm: {
+        title: 'Envoyez-nous un message',
+        description: 'Vous avez une question ? Remplissez le formulaire et nous vous répondrons.',
+        fields: {
+          name: { label: 'Nom complet', placeholder: 'Votre nom complet' },
+          email: { label: 'Email', placeholder: 'vous@exemple.com' },
+          subject: { label: 'Sujet', placeholder: 'Concernant...' },
+          message: { label: 'Votre message', placeholder: 'Écrivez votre message ici...' },
+        },
+        submitButton: {
+          default: 'Envoyer le message',
+          submitting: 'Envoi en cours...',
+        },
+        validation: {
+          name_min: 'Le nom doit comporter au moins 2 caractères.',
+          email_invalid: 'Veuillez entrer une adresse e-mail valide.',
+          subject_min: 'Le sujet doit comporter au moins 5 caractères.',
+          message_min: 'Le message doit comporter au moins 10 caractères.',
+        },
+        toast: {
+          success: { title: 'Message envoyé avec succès !', description: 'Merci de nous avoir contactés. Nous vous répondrons dès que possible.' },
+          error: { title: 'Une erreur est survenue', description: 'Nous n\'avons pas pu envoyer votre message. Veuillez réessayer.' },
+        }
+      }
+    },
+    footer: {
+      appName: 'AchraKat',
+      description: 'Une expérience d\'achat unique avec des paiements échelonnés faciles et pratiques.',
+      quickLinks: { title: 'Liens rapides' },
+      social: { title: 'Suivez-nous' },
+      copyright: 'AchraKat. Tous droits réservés.',
+    },
+  },
+};
