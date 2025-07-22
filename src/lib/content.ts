@@ -137,6 +137,30 @@ export const content = {
       phone: { title: 'الهاتف', number: '+966 123 456 789' },
       office: { title: 'المكتب', address: 'الرياض، المملكة العربية السعودية' },
       social: { title: 'تابعنا على' },
+      contactForm: {
+        title: 'أرسل لنا رسالة',
+        description: 'لديك سؤال أو استفسار؟ املأ النموذج وسنرد عليك في أقرب وقت.',
+        fields: {
+          name: { label: 'الاسم الكامل', placeholder: 'اسمك الكامل' },
+          email: { label: 'البريد الإلكتروني', placeholder: 'you@example.com' },
+          subject: { label: 'الموضوع', placeholder: 'بخصوص...' },
+          message: { label: 'رسالتك', placeholder: 'اكتب رسالتك هنا...' },
+        },
+        submitButton: {
+          default: 'إرسال الرسالة',
+          submitting: 'جاري الإرسال...',
+        },
+        validation: {
+            name_min: 'يجب أن يتكون الاسم من حرفين على الأقل.',
+            email_invalid: 'الرجاء إدخال بريد إلكتروني صالح.',
+            subject_min: 'يجب أن يتكون الموضوع من 5 أحرف على الأقل.',
+            message_min: 'يجب أن تتكون الرسالة من 10 أحرف على الأقل.',
+        },
+        toast: {
+          success: { title: 'تم إرسال رسالتك بنجاح!', description: 'شكرًا لتواصلك معنا. سنرد عليك في أقرب وقت ممكن.' },
+          error: { title: 'حدث خطأ', description: 'لم نتمكن من إرسال رسالتك. الرجاء المحاولة مرة أخرى.' },
+        }
+      }
     },
     footer: {
       appName: 'أشرقت',
@@ -284,6 +308,30 @@ export const content = {
       phone: { title: 'Téléphone', number: '+966 123 456 789' },
       office: { title: 'Bureau', address: 'Riyad, Arabie Saoudite' },
       social: { title: 'Suivez-nous sur' },
+      contactForm: {
+        title: 'Envoyez-nous un message',
+        description: 'Vous avez une question ? Remplissez le formulaire et nous vous répondrons.',
+        fields: {
+          name: { label: 'Nom complet', placeholder: 'Votre nom complet' },
+          email: { label: 'Email', placeholder: 'vous@exemple.com' },
+          subject: { label: 'Sujet', placeholder: 'Concernant...' },
+          message: { label: 'Votre message', placeholder: 'Écrivez votre message ici...' },
+        },
+        submitButton: {
+          default: 'Envoyer le message',
+          submitting: 'Envoi en cours...',
+        },
+        validation: {
+          name_min: 'Le nom doit comporter au moins 2 caractères.',
+          email_invalid: 'Veuillez entrer une adresse e-mail valide.',
+          subject_min: 'Le sujet doit comporter au moins 5 caractères.',
+          message_min: 'Le message doit comporter au moins 10 caractères.',
+        },
+        toast: {
+          success: { title: 'Message envoyé avec succès !', description: 'Merci de nous avoir contactés. Nous vous répondrons dès que possible.' },
+          error: { title: 'Une erreur est survenue', description: 'Nous n\'avons pas pu envoyer votre message. Veuillez réessayer.' },
+        }
+      }
     },
     footer: {
       appName: 'AchraKat',
