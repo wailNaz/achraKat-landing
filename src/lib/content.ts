@@ -100,8 +100,8 @@ export const content = {
           name: { label: 'اسم العمل', placeholder: 'اسم شركتك' },
           phone: { label: 'رقم الهاتف', placeholder: '05xxxxxxxx' },
           email: { label: 'البريد الإلكتروني', placeholder: 'partner@example.com' },
-          category: { 
-            label: 'فئة العمل', 
+          category: {
+            label: 'فئة العمل',
             placeholder: 'اختر فئة',
             options: [
               { value: 'electronics', label: 'إلكترونيات' },
@@ -151,10 +151,10 @@ export const content = {
           submitting: 'جاري الإرسال...',
         },
         validation: {
-            name_min: 'يجب أن يتكون الاسم من حرفين على الأقل.',
-            email_invalid: 'الرجاء إدخال بريد إلكتروني صالح.',
-            subject_min: 'يجب أن يتكون الموضوع من 5 أحرف على الأقل.',
-            message_min: 'يجب أن تتكون الرسالة من 10 أحرف على الأقل.',
+          name_min: 'يجب أن يتكون الاسم من حرفين على الأقل.',
+          email_invalid: 'الرجاء إدخال بريد إلكتروني صالح.',
+          subject_min: 'يجب أن يتكون الموضوع من 5 أحرف على الأقل.',
+          message_min: 'يجب أن تتكون الرسالة من 10 أحرف على الأقل.',
         },
         toast: {
           success: { title: 'تم إرسال رسالتك بنجاح!', description: 'شكرًا لتواصلك معنا. سنرد عليك في أقرب وقت ممكن.' },
