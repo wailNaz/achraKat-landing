@@ -7,27 +7,46 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useAddSupport } from "@/hooks/useSupport";
 
 export function Contact() {
+  const addSupport = useAddSupport();
   const [formData, setFormData] = useState({
-    name: "",
     email: "",
     phone: "",
     message: "",
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "تم إرسال رسالتك",
-      description: "شكراً لتواصلك معنا. سنرد عليك في أقرب وقت ممكن",
-    });
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    try {
+      const newFormData = {
+        desc: formData.message,
+        email: formData.email,
+        number: formData.phone,
+      };
+      await addSupport.mutateAsync(newFormData);
+      toast({
+        title: "تم إرسال رسالتك",
+        description: "شكراً لتواصلك معنا. سنرد عليك في أقرب وقت ممكن",
+      });
+    } catch (e) {
+      console.error("Error submitting form:", e);
+      toast({
+        title: "خطأ في الإرسال",
+        description:
+          "حدث خطأ أثناء إرسال رسالتك. يرجى المحاولة مرة أخرى لاحقًا.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setFormData({ email: "", phone: "", message: "" });
   };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   const contactInfo = [
@@ -73,29 +92,19 @@ export function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="name" className="text-dark-gray font-cairo">
-                        الاسم
-                      </Label>
-                      <Input
-                        id="name"
-                        type="text"
-                        value={formData.name}
-                        onChange={(e) => handleInputChange("name", e.target.value)}
-                        className="mt-2 rounded-xl border-gray-300 focus:ring-2 focus:ring-primary-blue font-tajawal"
-                        placeholder="أدخل اسمك"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="email" className="text-dark-gray font-cairo">
+                      <Label
+                        htmlFor="email"
+                        className="text-dark-gray font-cairo"
+                      >
                         البريد الإلكتروني
                       </Label>
                       <Input
                         id="email"
                         type="email"
                         value={formData.email}
-                        onChange={(e) => handleInputChange("email", e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("email", e.target.value)
+                        }
                         className="mt-2 rounded-xl border-gray-300 focus:ring-2 focus:ring-primary-blue font-tajawal"
                         placeholder="أدخل بريدك الإلكتروني"
                         required
@@ -104,14 +113,19 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <Label htmlFor="phone" className="text-dark-gray font-cairo">
+                    <Label
+                      htmlFor="phone"
+                      className="text-dark-gray font-cairo"
+                    >
                       رقم الهاتف
                     </Label>
                     <Input
                       id="phone"
                       type="tel"
                       value={formData.phone}
-                      onChange={(e) => handleInputChange("phone", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("phone", e.target.value)
+                      }
                       className="mt-2 rounded-xl border-gray-300 focus:ring-2 focus:ring-primary-blue font-tajawal"
                       placeholder="أدخل رقم هاتفك"
                       required
@@ -119,13 +133,18 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <Label htmlFor="message" className="text-dark-gray font-cairo">
+                    <Label
+                      htmlFor="message"
+                      className="text-dark-gray font-cairo"
+                    >
                       الرسالة
                     </Label>
                     <Textarea
                       id="message"
                       value={formData.message}
-                      onChange={(e) => handleInputChange("message", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("message", e.target.value)
+                      }
                       rows={5}
                       className="mt-2 rounded-xl border-gray-300 focus:ring-2 focus:ring-primary-blue resize-none font-tajawal"
                       placeholder="اكتب رسالتك هنا"
@@ -133,7 +152,10 @@ export function Contact() {
                     />
                   </div>
 
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
                     <Button
                       type="submit"
                       className="w-full gradient-bg text-white py-3 rounded-xl text-lg font-medium hover:shadow-xl transition-all duration-300 font-tajawal"
@@ -189,10 +211,16 @@ export function Contact() {
                   whileHover={{ scale: 1.05 }}
                   className="flex items-center justify-center bg-white rounded-xl p-4 card-shadow"
                 >
-                  <info.icon className={`${info.color} text-xl ml-4 flex-shrink-0`} />
+                  <info.icon
+                    className={`${info.color} text-xl ml-4 flex-shrink-0`}
+                  />
                   <div className="text-right">
-                    <div className="text-sm text-medium-gray font-tajawal">{info.label}</div>
-                    <div className="text-dark-gray font-cairo font-medium">{info.value}</div>
+                    <div className="text-sm text-medium-gray font-tajawal">
+                      {info.label}
+                    </div>
+                    <div className="text-dark-gray font-cairo font-medium">
+                      {info.value}
+                    </div>
                   </div>
                 </motion.div>
               ))}

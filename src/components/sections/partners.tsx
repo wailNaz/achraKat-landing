@@ -5,27 +5,90 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useAddCollaborator } from "@/hooks/useCollaborators";
+import { supabase } from "@/lib/supabase/config/supabase";
 
 export function Partners() {
-  const [formData, setFormData] = useState({
+  const addCollaborator = useAddCollaborator();
+  const [formData, setFormData] = useState<{
+    companyName: string;
+    email: string;
+    phone: string;
+    justificalofWork: string;
+    justificalofWorkFile: File | null;
+  }>({
     companyName: "",
-    commercialRegNumber: "",
     email: "",
     phone: "",
+    justificalofWork: "",
+    justificalofWorkFile: null,
   });
+
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "تم إرسال طلب الشراكة",
-      description: "سنتواصل معك قريباً لاستكمال عملية التسجيل",
-    });
-    setFormData({ companyName: "", commercialRegNumber: "", email: "", phone: "" });
+  function getJustificationOfWorkPath(file: File): string {
+    const extension = file.name.split(".").pop() || "jpg";
+    const randomNumber = Math.floor(Math.random() * 1000000);
+    return `justificationOfwork/${randomNumber}.${extension}`;
+  }
+
+  const handleFileChange = (file: File) => {
+    const path = getJustificationOfWorkPath(file);
+    setFormData((prev) => ({
+      ...prev,
+      justificalofWork: path,
+      justificalofWorkFile: file,
+    }));
   };
 
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+  const uploadImageToStorage = async (file: File, path: string) => {
+    const { data, error } = await supabase.storage
+      .from("achrakat")
+      .upload(path, file, {
+        cacheControl: "3600",
+        upsert: false,
+      });
+    return `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/achrakat/${data?.path}`;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const publicPath = await uploadImageToStorage(
+        formData.justificalofWorkFile!,
+        formData.justificalofWork
+      );
+      const formDataToSubmit = {
+        name: formData.companyName,
+        email: formData.email,
+        number: formData.phone,
+        justificalofWork: publicPath,
+      };
+      await addCollaborator.mutateAsync(formDataToSubmit);
+      toast({
+        title: "تم إرسال طلب الشراكة",
+        description: "سنتواصل معك قريباً لاستكمال عملية التسجيل",
+      });
+    } catch (e) {
+      console.error("Error submitting form:", e);
+      toast({
+        title: "خطأ في إرسال الطلب",
+        description: "يرجى المحاولة مرة أخرى لاحقاً",
+        variant: "destructive",
+      });
+    }
+
+    setFormData({
+      companyName: "",
+      justificalofWork: "",
+      email: "",
+      phone: "",
+      justificalofWorkFile: null,
+    });
+  };
+
+  const handleInputChange = (field: string, value: any) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   return (
@@ -42,21 +105,27 @@ export function Partners() {
               انضم كشريك
             </h2>
             <p className="text-xl text-medium-gray mb-8 font-tajawal">
-              ابدأ رحلتك التجارية معنا واحصل على عمولات مجزية ودعم متكامل لنمو أعمالك
+              ابدأ رحلتك التجارية معنا واحصل على عمولات مجزية ودعم متكامل لنمو
+              أعمالك
             </p>
 
             <Card className="p-6 card-shadow">
               <CardContent className="p-0">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <Label htmlFor="companyName" className="text-dark-gray font-cairo">
+                    <Label
+                      htmlFor="companyName"
+                      className="text-dark-gray font-cairo"
+                    >
                       اسم الشركة
                     </Label>
                     <Input
                       id="companyName"
                       type="text"
                       value={formData.companyName}
-                      onChange={(e) => handleInputChange("companyName", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("companyName", e.target.value)
+                      }
                       className="mt-2 rounded-xl border-gray-300 focus:ring-2 focus:ring-primary-blue font-tajawal"
                       placeholder="أدخل اسم شركتك"
                       required
@@ -64,29 +133,40 @@ export function Partners() {
                   </div>
 
                   <div>
-                    <Label htmlFor="commercialRegNumber" className="text-dark-gray font-cairo">
-                      رقم السجل التجاري
+                    <Label
+                      htmlFor="justificalofWork"
+                      className="text-dark-gray font-cairo"
+                    >
+                      إثبات العمل
                     </Label>
                     <Input
-                      id="commercialRegNumber"
-                      type="text"
-                      value={formData.commercialRegNumber}
-                      onChange={(e) => handleInputChange("commercialRegNumber", e.target.value)}
-                      className="mt-2 rounded-xl border-gray-300 focus:ring-2 focus:ring-primary-blue font-tajawal"
-                      placeholder="أدخل رقم السجل التجاري"
-                      required
+                      id="justificalofWork"
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) => {
+                        const file = e.target.files?.[0];
+                        if (file) {
+                          handleFileChange(file);
+                        }
+                      }}
+                      className="mt-2 block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-primary-blue file:text-white hover:file:bg-blue-600 font-tajawal"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="email" className="text-dark-gray font-cairo">
+                    <Label
+                      htmlFor="email"
+                      className="text-dark-gray font-cairo"
+                    >
                       البريد الإلكتروني
                     </Label>
                     <Input
                       id="email"
                       type="email"
                       value={formData.email}
-                      onChange={(e) => handleInputChange("email", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("email", e.target.value)
+                      }
                       className="mt-2 rounded-xl border-gray-300 focus:ring-2 focus:ring-primary-blue font-tajawal"
                       placeholder="أدخل بريدك الإلكتروني"
                       required
@@ -94,21 +174,29 @@ export function Partners() {
                   </div>
 
                   <div>
-                    <Label htmlFor="phone" className="text-dark-gray font-cairo">
+                    <Label
+                      htmlFor="phone"
+                      className="text-dark-gray font-cairo"
+                    >
                       رقم الهاتف
                     </Label>
                     <Input
                       id="phone"
                       type="tel"
                       value={formData.phone}
-                      onChange={(e) => handleInputChange("phone", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("phone", e.target.value)
+                      }
                       className="mt-2 rounded-xl border-gray-300 focus:ring-2 focus:ring-primary-blue font-tajawal"
                       placeholder="أدخل رقم هاتفك"
                       required
                     />
                   </div>
 
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
                     <Button
                       type="submit"
                       className="w-full gradient-bg text-white py-3 rounded-xl text-lg font-medium hover:shadow-xl transition-all duration-300 font-tajawal"
